@@ -14,9 +14,19 @@ public class Projectile : MonoBehaviour
 
     internal virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall") )
+        if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Enemigo1")) {
+
+            Debug.Log("Colisión con Enemigo1");
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Enemigo2"))
+        {
+            Debug.Log("Colisión con Enemigo1");
+            Destroy(gameObject);
         }
     }
     //
@@ -28,6 +38,7 @@ public class Projectile : MonoBehaviour
         }
         if (this.transform.position.x < -xLimit)
         {
+           
             Destroy(this.gameObject);
         }
         if (this.transform.position.y > yLimit)
