@@ -47,16 +47,14 @@ public class Controlador : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemigo1") || collision.gameObject.CompareTag("Enemigo2"))
+        if (collision.gameObject.CompareTag("Enemigo"))
         {
 
-            playerHealth -= 20;
-           
-            Debug.Log(playerHealth);
-            transform.position = initialPosition;
-            if (playerHealth < 0)
+            playerHealth -= 20;           
+            Debug.Log(playerHealth);           
+            if (playerHealth <= 0)
             {
-                playerHealth = 0;
+                
                 SceneManager.LoadScene("SampleScene");
              
                

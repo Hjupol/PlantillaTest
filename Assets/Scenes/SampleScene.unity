@@ -680,6 +680,8 @@ MonoBehaviour:
   balas: {fileID: 0}
   cantidadBalas: {fileID: 0}
   textoBalas: 
+  playerHealth: 100
+  healthText: {fileID: 0}
 --- !u!1 &351208468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1055,8 @@ MonoBehaviour:
   balas: {fileID: 338333395}
   cantidadBalas: {fileID: 625867964}
   textoBalas: 
+  playerHealth: 100
+  healthText: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,9 +1120,10 @@ GameObject:
   - component: {fileID: 1161872815}
   - component: {fileID: 1161872814}
   - component: {fileID: 1161872819}
+  - component: {fileID: 1161872820}
   m_Layer: 0
   m_Name: Enemigo2
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,7 +1170,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1191,7 +1196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e6b276ec991f467aa14ef1f3cc665993, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1250,6 +1255,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 5
   target: {fileID: 0}
+  "da\xF1o": 0
+--- !u!114 &1161872820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161872812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1df63620b39024e88f2748abdf8425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balas: {fileID: 0}
+  cantidadBalas: {fileID: 0}
+  textoBalas: 
+  playerHealth: 100
+  healthText: {fileID: 0}
 --- !u!1 &1409074841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1285,7 @@ GameObject:
   - component: {fileID: 1409074844}
   - component: {fileID: 1409074843}
   - component: {fileID: 1409074842}
+  - component: {fileID: 1409074846}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: Untagged
@@ -1312,7 +1336,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3e272a8914cc1b646a28ab70be4277fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1352,11 +1376,23 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.45, y: 1.14, z: -0.04}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409074846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409074841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2903571a408b79b4d99c7bb10c3dfca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1746481347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,9 +1407,10 @@ GameObject:
   - component: {fileID: 1746481349}
   - component: {fileID: 1746481354}
   - component: {fileID: 1746481355}
+  - component: {fileID: 1746481356}
   m_Layer: 0
   m_Name: Enemigo1
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1393,7 +1430,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1419,7 +1456,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e6b276ec991f467aa14ef1f3cc665993, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1505,6 +1542,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 5
   target: {fileID: 0}
+  "da\xF1o": 0
+--- !u!114 &1746481356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746481347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1df63620b39024e88f2748abdf8425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balas: {fileID: 0}
+  cantidadBalas: {fileID: 0}
+  textoBalas: 
+  playerHealth: 100
+  healthText: {fileID: 0}
 --- !u!1 &1748629479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1644,8 @@ MonoBehaviour:
   balas: {fileID: 0}
   cantidadBalas: {fileID: 0}
   textoBalas: 
+  playerHealth: 100
+  healthText: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

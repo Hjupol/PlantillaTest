@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Proyectil
   - Wall
+  - New tag
+  - Enemigo2
+  - Enemigo
   layers:
   - Default
   - TransparentFX
