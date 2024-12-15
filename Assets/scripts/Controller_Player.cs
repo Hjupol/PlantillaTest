@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using Unity.VisualScripting;
 
 public class Controller_Player : MonoBehaviour
 {
@@ -9,12 +11,15 @@ public class Controller_Player : MonoBehaviour
 
     private Rigidbody rb;
 
+    public TMPro.TextMeshPro cantidadBalas;
+
     public GameObject projectile;
     public GameObject doubleProjectile;
     public GameObject missileProjectile;
     public GameObject laserProjectile;
     public GameObject option;
     public int powerUpCount=0;
+    public int bulletCount;
 
     internal bool doubleShoot;
     internal bool missiles;
@@ -67,6 +72,7 @@ public class Controller_Player : MonoBehaviour
         missiles = false;
         laserOn = false;
         forceField = false;
+
         //options = new List<Controller_Option>();
     }
 
@@ -97,14 +103,15 @@ public class Controller_Player : MonoBehaviour
     {
         missileCount -= Time.deltaTime;
         shootingCount -= Time.deltaTime;
-        if (Input.GetKey(KeyCode.O) && shootingCount < 0)
+        if (Input.GetKey(KeyCode.Space) && shootingCount < 0)
         {
             if (OnShooting != null)
             {
                 OnShooting();
+                
             }
-
-
+            bulletCount += 1;
+           
             Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
 
@@ -128,5 +135,6 @@ public class Controller_Player : MonoBehaviour
             lastKeyUp = false;
         }
     }
+   
 
 }
